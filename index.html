@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09090b">
+<title>SHAOWN ENTERPRISE</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,"Noto Sans Bengali",sans-serif;background:#070709;color:#fff;line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(7,7,9,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{max-width:1150px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:900;letter-spacing:1px;color:#ffd76a;text-shadow:0 0 18px rgba(255,193,7,.35)}
+nav{display:flex;gap:22px}
+nav a{font-size:14px;color:#ddd;transition:.25s}
+nav a:hover{color:#ffd76a}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:110px 20px 70px;position:relative;background:radial-gradient(circle at 50% 20%,#35260b 0,#110d08 28%,#070709 62%)}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(50px);opacity:.25}
+.hero:before{width:260px;height:260px;background:#ffb300;top:18%;left:-100px}
+.hero:after{width:220px;height:220px;background:#e53935;right:-80px;bottom:12%}
+.hero-card{position:relative;z-index:2;max-width:850px;padding:45px 25px;border:1px solid rgba(255,215,106,.22);border-radius:30px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));box-shadow:0 25px 80px rgba(0,0,0,.55),inset 0 1px rgba(255,255,255,.12);transform:perspective(900px) rotateX(2deg)}
+.badge{display:inline-block;padding:7px 16px;border-radius:99px;border:1px solid #8d6a18;color:#ffd76a;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(42px,9vw,82px);line-height:1.02;letter-spacing:-2px;background:linear-gradient(90deg,#fff,#ffd76a,#fff);-webkit-background-clip:text;color:transparent}
+.hero p{max-width:650px;margin:22px auto;color:#c9c9c9;font-size:17px}
+.btn{display:inline-block;margin:7px;padding:12px 22px;border-radius:12px;font-weight:800;border:1px solid #ffd76a;background:linear-gradient(145deg,#ffd76a,#b77b00);color:#111;box-shadow:0 10px 30px rgba(255,183,0,.18);transition:.25s}
+.btn:hover{transform:translateY(-3px) scale(1.02)}
+.btn.dark{background:rgba(255,255,255,.05);color:#fff;border-color:#555}
+section{padding:85px 20px}
+.container{max-width:1100px;margin:auto}
+.title{text-align:center;margin-bottom:42px}
+.title h2{font-size:38px;color:#ffd76a}
+.title p{color:#aaa;margin-top:6px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.product{padding:28px 22px;border-radius:22px;background:linear-gradient(145deg,#17171b,#0d0d10);border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 45px rgba(0,0,0,.35);transition:.3s;position:relative;overflow:hidden}
+.product:hover{transform:translateY(-8px) rotateX(2deg);border-color:#8d6a18}
+.product .icon{font-size:55px;margin-bottom:15px}
+.product h3{font-size:22px;margin-bottom:7px}
+.product p{color:#aaa}
+.price{display:inline-block;margin-top:16px;color:#ffd76a;font-weight:bold}
+.about{background:#0b0b0e}
+.about-box{max-width:850px;margin:auto;text-align:center;padding:38px;border-radius:25px;background:linear-gradient(145deg,rgba(255,215,106,.08),rgba(255,255,255,.02));border:1px solid rgba(255,215,106,.15)}
+.about-box p{color:#c7c7c7}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card,.login-card{padding:30px;border-radius:22px;background:#101014;border:1px solid rgba(255,255,255,.08)}
+.contact-card h3{color:#ffd76a;margin-bottom:12px}
+.contact-card p{color:#bbb;margin:8px 0}
+form{display:grid;gap:12px}
+input,textarea{width:100%;padding:13px 15px;border-radius:11px;border:1px solid #333;background:#09090b;color:#fff;outline:none}
+input:focus,textarea:focus{border-color:#ffd76a}
+textarea{min-height:120px;resize:vertical}
+footer{text-align:center;padding:28px 15px;border-top:1px solid #222;color:#888;font-size:13px}
+#loginMsg{margin-top:12px;color:#ffd76a;font-size:14px}
+@media(max-width:760px){
+ nav{display:none}
+ .nav{padding:14px 16px}
+ .products,.contact-grid{grid-template-columns:1fr}
+ section{padding:65px 16px}
+ .hero-card{padding:35px 17px}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="nav">
+  <a class="logo" href="#home">SHAOWN ENTERPRISE</a>
+  <nav>
+   <a href="#home">Home</a>
+   <a href="#products">Products</a>
+   <a href="#about">About</a>
+   <a href="#contact">Contact</a>
+   <a href="#login">Login</a>
+  </nav>
+ </div>
+</header>
+
+<section class="hero" id="home">
+ <div class="hero-card">
+  <span class="badge">Premium Brand</span>
+  <h1>SHAOWN<br>ENTERPRISE</h1>
+  <p>গুণগত মান, আস্থা ও আধুনিকতার সাথে আপনার প্রতিদিনের পছন্দ।</p>
+  <a class="btn" href="#products">Products দেখুন</a>
+  <a class="btn dark" href="#contact">যোগাযোগ করুন</a>
+ </div>
+</section>
+
+<section id="products">
+ <div class="container">
+  <div class="title">
+   <h2>আমাদের পণ্য</h2>
+   <p>গৃহিণী মসলা — প্রতিটি রান্নায় বাড়তি স্বাদ</p>
+  </div>
+  <div class="products">
+   <article class="product">
+    <div class="icon">🌶️</div><h3>মরিচ গুঁড়া</h3>
+    <p>ঝাল ও রঙের সুন্দর ভারসাম্যে রান্নাকে করে আরও আকর্ষণীয়।</p>
+    <span class="price">Premium Quality</span>
+   </article>
+   <article class="product">
+    <div class="icon">🌼</div><h3>হলুদ গুঁড়া</h3>
+    <p>প্রতিদিনের রান্নার জন্য বাছাই করা হলুদের গুঁড়া।</p>
+    <span class="price">Premium Quality</span>
+   </article>
+   <article class="product">
+    <div class="icon">🧂</div><h3>মিক্সড মসলা</h3>
+    <p>বিভিন্ন মসলার সুস্বাদু সমন্বয়—ঘ্রাণে ও স্বাদে অনন্য।</p>
+    <span class="price">Premium Quality</span>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="about">
+ <div class="container">
+  <div class="title"><h2>আমাদের সম্পর্কে</h2></div>
+  <div class="about-box">
+   <p><b>SHAOWN ENTERPRISE</b> একটি আধুনিক ও আস্থাভাজন ব্র্যান্ড। আমাদের লক্ষ্য হলো মানসম্মত পণ্য ও সুন্দর সেবার মাধ্যমে গ্রাহকের আস্থা অর্জন করা।</p>
+   <p style="margin-top:14px">গৃহিণী মসলা — খাঁটি মসলার স্বাদ, মনমাতানো সুগন্ধ এবং প্রতিটি রান্নায় বাড়তি আনন্দ।</p>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="title"><h2>যোগাযোগ</h2><p>আপনার মতামত বা অর্ডারের জন্য যোগাযোগ করুন</p></div>
+  <div class="contact-grid">
+   <div class="contact-card">
+    <h3>SHAOWN ENTERPRISE</h3>
+    <p>📞 ফোন: আপনার নম্বর এখানে দিন</p>
+    <p>📧 ইমেইল: your@email.com</p>
+    <p>📍 ঠিকানা: আপনার ঠিকানা এখানে দিন</p>
+   </div>
+   <div class="contact-card">
+    <form onsubmit="sendMessage(event)">
+     <input id="name" placeholder="আপনার নাম" required>
+     <input id="email" type="email" placeholder="ইমেইল" required>
+     <textarea id="message" placeholder="আপনার মেসেজ" required></textarea>
+     <button class="btn" type="submit">মেসেজ পাঠান</button>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="login">
+ <div class="container">
+  <div class="title"><h2>Login</h2><p>Admin panel-এর জন্য লগইন</p></div>
+  <div class="login-card" style="max-width:430px;margin:auto">
+   <form onsubmit="login(event)">
+    <input id="user" placeholder="Username" required>
+    <input id="pass" type="password" placeholder="Password" required>
+    <button class="btn" type="submit">Login</button>
+   </form>
+   <div id="loginMsg"></div>
+  </div>
+ </div>
+</section>
+
+<footer>© 2026 SHAOWN ENTERPRISE — All Rights Reserved.</footer>
+
+<script>
+function login(e){
+ e.preventDefault();
+ const u=document.getElementById('user').value;
+ const p=document.getElementById('pass').value;
+ const msg=document.getElementById('loginMsg');
+ if(u==='admin' && p==='1234'){
+   msg.textContent='✅ Login successful!';
+ }else{
+   msg.textContent='❌ Username অথবা password ভুল।';
+ }
+}
+function sendMessage(e){
+ e.preventDefault();
+ alert('ধন্যবাদ! আপনার মেসেজ প্রস্তুত হয়েছে। যোগাযোগের নম্বর/ইমেইল সেট করলে এটি সরাসরি পাঠানো যাবে।');
+}
+</script>
+</body>
+</html>
